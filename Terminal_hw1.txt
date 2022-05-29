@@ -1,0 +1,93 @@
+HW_1. The first part
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я 
+   pwd
+
+2) Создать папку
+   mkdir new_qa
+
+3) Зайти в папку 
+   cd new_qa
+
+4) Создать 3 папки 
+   mkdir qa_1 qa_2 qa_3
+
+5) Зайти в любоую папку 
+   cd qa_1
+
+6) Создать 5 файлов (3 txt, 2 json) 
+   touch test1.txt test2.txt test3.txt test4.json test5.json
+
+7) Создать 3 папки 
+   mkdir qa_11 qa_12 qa_13
+
+8) Вывести список содержимого папки 
+   ls -la
+
+9) Открыть любой txt файл
+   nano test1.txt
+
+10) Написать туда что-нибудь, любой текст:
+	Hello, guys!
+	Nice to meet you.
+	How are you?
+	I am glad to study with you.
+	Bye-bye. See you!
+	
+11) Сохранить и выйти. 
+    Ctrl+o, Ctrl+x
+
+12) Выйти из папки на уровень выше 
+    cd ..
+
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку.
+	mv qa_1/test1.txt qa_1/test2.txt qa_2
+	
+14) Скопировать любые 2 файла, которые вы создали, в любую другую папку.
+	cp qa_1/test3.txt qa_1/test4.json qa_3
+	
+15) Найти файл по имени
+    find -type f -name test3.txt
+	
+16) Просмотреть содержимое в реальном времени.
+	less +F qa_1/test6.log   
+	или
+	tail -f qa_1/test6.log
+17) Вывести несколько первых строк из текстового файла
+	head -n 2 qa_2/test1.txt
+	
+18) Вывести несколько последних строк из текстового файла
+	tail -n 2 qa_2/test1.txt
+	
+19) Просмотреть содержимое длинного файла (команда less) изучите как она работает. 
+    less qa_1/long_txt.txt
+	
+20) вывести дату и время - date
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+curl 'http://162.55.220.72:5005/terminal-hw-request'
+curl 'http://162.55.220.72:5005/get_method?name=mariikaAks&age=38'
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+script.sh
+
+$ chmod +x script.sh // сделать файл исполняемым
+$ ./script.sh //запустить файл
+
+#!/bin/bash
+cd ~/new_qa
+mkdir qa_1 qa_2 qa_3
+cd qa_1
+touch test1.txt test2.txt test3.txt test4.json test5.json
+mkdir qa_11 qa_12 qa_13
+ls -la
+mv test1.txt test2.txt ../qa_2
+
+
+
+
